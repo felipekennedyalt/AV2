@@ -11,6 +11,8 @@ public class MenuPrincipal extends AppCompatActivity {
 
     private Button btUsuarioMenu;
     private Button btSairMenu;
+    private Button btPrevencaoCovid;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,7 @@ public class MenuPrincipal extends AppCompatActivity {
 
         btSairMenu = findViewById(R.id.btSairMenu);
         btUsuarioMenu = findViewById(R.id.btUsuarioMenu);
+        btPrevencaoCovid = findViewById(R.id.btPrevencaoCovid);
 
         btUsuarioMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +36,13 @@ public class MenuPrincipal extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(MenuPrincipal.this, TelaAutenticacao.class));
                 finish();
+            }
+        });
+
+        btPrevencaoCovid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuPrincipal.this, PrevencaoCorona.class);
             }
         });
 

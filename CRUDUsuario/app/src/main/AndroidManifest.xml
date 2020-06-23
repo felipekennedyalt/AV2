@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListaEstados"></activity>
+        <activity android:name=".PrevencaoCorona2"></activity>
+        <activity android:name=".PrevencaoCorona" />
+        <activity android:name=".ListaEstados" />
         <activity android:name=".MenuPrincipal" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ListarUsuarios" />
