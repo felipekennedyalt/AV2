@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ResourceCursorAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.crudusuario.webservice.CasosPorEstado;
@@ -29,6 +30,7 @@ public class TelaAutenticacao extends AppCompatActivity {
     EditText txtSenhaAut;
     Button btEntrarAut;
     Button btTest;
+    TextView tvRegistrar;
 
 
     @Override
@@ -39,16 +41,25 @@ public class TelaAutenticacao extends AppCompatActivity {
         txtUsuarioAut = findViewById(R.id.txtUsuarioAut);
         txtSenhaAut = findViewById(R.id.txtSenhaAut);
         btEntrarAut = findViewById(R.id.btEntrarAut);
-        btTest = findViewById(R.id.btTeste);
+        tvRegistrar = findViewById(R.id.tvRegistrar);
+       // btTest = findViewById(R.id.btTeste);
         final Util util = new Util();
 
-        btTest.setOnClickListener(new View.OnClickListener() {
+
+        tvRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TelaAutenticacao.this, ListaEstados.class));
-
+                startActivity(new Intent(TelaAutenticacao.this, MainActivity.class));
             }
         });
+
+       // btTest.setOnClickListener(new View.OnClickListener() {
+         //   @Override
+           // public void onClick(View v) {
+         //       startActivity(new Intent(TelaAutenticacao.this, Denunciar.class));
+
+        //     }
+      //  });
 
 
         btEntrarAut.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +74,7 @@ public class TelaAutenticacao extends AppCompatActivity {
     public void autenticarUsuario(String login, String senha){
         OkHttpClient client = new OkHttpClient();
         Request request;
-        String url = "http://192.168.1.4:8080/webservice/usuario/autenticar.php?"+
+        String url = "http://192.168.1.3/webservice/usuario/autenticar.php?"+
                 "login="+login+
                 "&senha="+senha;
         request = new Request.Builder()
