@@ -1,12 +1,20 @@
 package com.example.crudusuario;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MenuPrincipal extends AppCompatActivity {
 
@@ -28,6 +36,10 @@ public class MenuPrincipal extends AppCompatActivity {
         if(actionBar != null){
             actionBar.setTitle("Menu Principal");
         }
+
+
+
+
 
         btUsuarioMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,4 +65,36 @@ public class MenuPrincipal extends AppCompatActivity {
         });
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+            if(id == R.id.btn_Denunciar){
+                call();
+            }else if (id == R.id.btn_sobre){
+                startActivity(new Intent(MenuPrincipal.this, Sobre.class));
+            }
+        return true;
+    }
+
+        private void call(){
+        Intent intentcall = new Intent(Intent.ACTION_CALL);
+        intentcall.setData(Uri.parse("tel:190"));
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+            Toast.makeText(this, "Permissão Necessaria", Toast.LENGTH_SHORT).show();
+            request();
+        }else{
+            startActivity(intentcall);
+        }
+    }
+
+    private void request(){
+        String[] array = {"android.Manifest.permission.CALL_PHONE"};
+        ActivityCompat.requestPermissions(this, array, 1);
+    }
+
 }

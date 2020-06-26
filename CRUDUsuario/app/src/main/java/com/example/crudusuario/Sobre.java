@@ -36,14 +36,14 @@ public class Sobre extends AppCompatActivity {
         btnAlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "O cara mais bonito da equipe", R.drawable.Alan);
+                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "O cara mais bonito da equipe", R.drawable.alan);
             }
         });
 
         btnCaio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "dafa", R.drawable.Caio);
+                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "dafa", R.drawable.caio);
 
             }
         });
@@ -51,7 +51,7 @@ public class Sobre extends AppCompatActivity {
         btnDanylo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "asgvba", R.drawable.Danylo);
+                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "asgvba", R.drawable.danylo);
 
             }
         });
@@ -59,7 +59,7 @@ public class Sobre extends AppCompatActivity {
         btnFelipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "asga", R.drawable.Felipe);
+                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "asga", R.drawable.felipe);
 
             }
         });
@@ -67,7 +67,7 @@ public class Sobre extends AppCompatActivity {
         btnVictor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "aefgaG", R.drawable.Victor);
+                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "", R.drawable.victor);
 
             }
         });
