@@ -61,6 +61,7 @@ public class MenuPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuPrincipal.this, PrevencaoCorona.class);
+                startActivity(intent);
             }
         });
 
@@ -76,7 +77,8 @@ public class MenuPrincipal extends AppCompatActivity {
             if(id == R.id.btn_Denunciar){
                 call();
             }else if (id == R.id.btn_sobre){
-                startActivity(new Intent(MenuPrincipal.this, Sobre.class));
+                Intent intent = new Intent(MenuPrincipal.this, Sobre.class);
+                startActivity(intent);
             }
         return true;
     }

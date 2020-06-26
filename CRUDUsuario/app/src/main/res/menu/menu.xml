@@ -5,11 +5,12 @@
     <item android:id="@+id/btn_Denunciar"
         android:title="Denunciar"
         android:icon="@drawable/ic_action_denunciar"
-        app:showAsAction="always"/>
+        app:showAsAction="never"/>
+
     <item android:id="@+id/btn_sobre"
         android:title="Sobre"
         android:icon="@drawable/ic_action_sobre"
-        app:showAsAction="always"/>
+        app:showAsAction="never"/>
 
 
 
