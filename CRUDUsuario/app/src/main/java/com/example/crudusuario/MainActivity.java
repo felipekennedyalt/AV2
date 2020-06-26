@@ -1,5 +1,6 @@
 package com.example.crudusuario;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -50,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
         btPesq = findViewById(R.id.btPesq);
         btExcluir = findViewById(R.id.btExcluir);
         btSincronizar = findViewById(R.id.btSinc);
+
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.setTitle("Usuário");
+        }
 
 
         usuarioDAO = new UsuarioDAO(openOrCreateDatabase(UsuarioDAO.NOME_BANCO, MODE_PRIVATE, null));
@@ -157,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
         String url = "";
         for (final Usuario usuario : listaUsuarios) {
 
-            url = "http://192.168.1.4:8080/webservice/usuario/salvar.php?"+"id="+usuario.getId()
+            url = "http://192.168.1.3/webservice/usuario/salvar.php?"+"id="+usuario.getId()
                     +"&nome="+usuario.getNome()
                     +"&login="+usuario.getLogin()
                     +"&senha="+usuario.getSenha();
@@ -207,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
     public void verificarUsuarioDuplicado(String login){
         OkHttpClient client = new OkHttpClient();
         Request request;
-        String url = "http://192.168.1.4:8080/webservice/usuario/verificar_duplicado.php?"+
+        String url = "http://192.168.1.3/webservice/usuario/verificar_duplicado.php?"+
                 "login="+login;
 
         request = new Request.Builder()

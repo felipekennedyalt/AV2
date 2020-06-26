@@ -1,5 +1,6 @@
 package com.example.crudusuario;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -20,6 +21,13 @@ public class PrevencaoCorona2 extends AppCompatActivity {
 
         btVoltarPrevencao = findViewById(R.id.btVoltarPrevencao);
         btVoltarPrevencaoMenu = findViewById(R.id.btVoltarPrevencaoMenu);
+
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.setTitle("Prevenção COVID-19");
+        }
+
+
 
 
         btVoltarPrevencao.setOnClickListener(new View.OnClickListener() {

@@ -1,5 +1,6 @@
 package com.example.crudusuario;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -35,6 +36,11 @@ public class ListarUsuarios extends AppCompatActivity {
         btPesquisar = findViewById(R.id.btPesquisar);
         listViewUsuarios = findViewById(R.id.listUsuarios);
         txtPesquisar = findViewById(R.id.txtPesquisar);
+
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.setTitle("Listar Usuários");
+        }
 
         usuarioDAO = new UsuarioDAO(openOrCreateDatabase(usuarioDAO.NOME_BANCO, MODE_PRIVATE, null));
 

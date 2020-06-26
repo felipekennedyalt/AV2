@@ -1,5 +1,6 @@
 package com.example.crudusuario;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -45,6 +46,10 @@ public class TelaAutenticacao extends AppCompatActivity {
        // btTest = findViewById(R.id.btTeste);
         final Util util = new Util();
 
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.setTitle("Login");
+        }
 
         tvRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override

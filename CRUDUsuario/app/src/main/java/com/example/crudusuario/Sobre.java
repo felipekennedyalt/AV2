@@ -1,5 +1,6 @@
 package com.example.crudusuario;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -27,17 +28,22 @@ public class Sobre extends AppCompatActivity {
         btnFelipe.findViewById(R.id.btnFelipe);
         btnVictor.findViewById(R.id.btnVictor);
 
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.setTitle("Sobre");
+        }
+
         btnAlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "O cara mais bonito da equipe", R.drawable.tosse);
+                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "O cara mais bonito da equipe", R.drawable.Alan);
             }
         });
 
         btnCaio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "dafa", R.drawable.tosse);
+                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "dafa", R.drawable.Caio);
 
             }
         });
@@ -45,7 +51,7 @@ public class Sobre extends AppCompatActivity {
         btnDanylo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "asgvba", R.drawable.tosse);
+                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "asgvba", R.drawable.Danylo);
 
             }
         });
@@ -53,7 +59,7 @@ public class Sobre extends AppCompatActivity {
         btnFelipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "asga", R.drawable.tosse);
+                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "asga", R.drawable.Felipe);
 
             }
         });
@@ -61,7 +67,7 @@ public class Sobre extends AppCompatActivity {
         btnVictor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "aefgaG", R.drawable.tosse);
+                DialogUtil.mostrarDialog(getApplicationContext(), "Desenvolvedor", "aefgaG", R.drawable.Victor);
 
             }
         });

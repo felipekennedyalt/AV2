@@ -1,5 +1,6 @@
 package com.example.crudusuario;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,6 +23,11 @@ public class MenuPrincipal extends AppCompatActivity {
         btSairMenu = findViewById(R.id.btSairMenu);
         btUsuarioMenu = findViewById(R.id.btUsuarioMenu);
         btPrevencaoCovid = findViewById(R.id.btPrevencaoCovid);
+
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.setTitle("Menu Principal");
+        }
 
         btUsuarioMenu.setOnClickListener(new View.OnClickListener() {
             @Override
