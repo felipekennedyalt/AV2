@@ -16,11 +16,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class MenuPrincipal extends AppCompatActivity {
 
     private Button btUsuarioMenu;
-    private Button btSairMenu;
     private Button btPrevencaoCovid;
+    private Button btnCasosCovid;
+
 
 
     @Override
@@ -28,9 +31,10 @@ public class MenuPrincipal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_principal);
 
-        btSairMenu = findViewById(R.id.btSairMenu);
         btUsuarioMenu = findViewById(R.id.btUsuarioMenu);
         btPrevencaoCovid = findViewById(R.id.btPrevencaoCovid);
+        btnCasosCovid = findViewById(R.id.btnCasosCovid);
+
 
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
@@ -39,20 +43,19 @@ public class MenuPrincipal extends AppCompatActivity {
 
 
 
+        btnCasosCovid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MenuPrincipal.this, ListaEstados.class));
+                finish();
+            }
+        });
 
 
         btUsuarioMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MenuPrincipal.this, MainActivity.class));
-                finish();
-            }
-        });
-
-        btSairMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MenuPrincipal.this, TelaAutenticacao.class));
                 finish();
             }
         });
@@ -73,13 +76,18 @@ public class MenuPrincipal extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-            if(id == R.id.btn_Denunciar){
+        switch (item.getItemId()) {
+            case R.id.item_sobre:
+                startActivity(new Intent(this, Sobre.class));
+                break;
+            case R.id.btn_Denunciar:
                 call();
-            }else if (id == R.id.btn_sobre){
-                Intent intent = new Intent(MenuPrincipal.this, Sobre.class);
-                startActivity(intent);
-            }
+                break;
+            case R.id.item_sair:
+                startActivity(new Intent(MenuPrincipal.this, TelaAutenticacao.class));
+                finish();
+                break;
+        }
         return true;
     }
 

@@ -10,6 +10,7 @@
         android:id="@+id/listaEstados"
         android:layout_width="331dp"
         android:layout_height="594dp"
+        android:cacheColorHint="#070FCB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

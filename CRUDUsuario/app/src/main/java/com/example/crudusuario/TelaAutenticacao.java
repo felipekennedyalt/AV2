@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ResourceCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,8 +31,8 @@ public class TelaAutenticacao extends AppCompatActivity {
     EditText txtUsuarioAut;
     EditText txtSenhaAut;
     Button btEntrarAut;
-    Button btTest;
     TextView tvRegistrar;
+    ImageView imageView;
 
 
     @Override
@@ -43,7 +44,8 @@ public class TelaAutenticacao extends AppCompatActivity {
         txtSenhaAut = findViewById(R.id.txtSenhaAut);
         btEntrarAut = findViewById(R.id.btEntrarAut);
         tvRegistrar = findViewById(R.id.tvRegistrar);
-       // btTest = findViewById(R.id.btTeste);
+        imageView = findViewById(R.id.imageView2);
+
         final Util util = new Util();
 
         ActionBar actionBar = getSupportActionBar();
@@ -54,17 +56,11 @@ public class TelaAutenticacao extends AppCompatActivity {
         tvRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TelaAutenticacao.this, MainActivity.class));
+                startActivity(new Intent(TelaAutenticacao.this, TelaRegistrar.class));
             }
         });
 
-       // btTest.setOnClickListener(new View.OnClickListener() {
-         //   @Override
-           // public void onClick(View v) {
-         //       startActivity(new Intent(TelaAutenticacao.this, Denunciar.class));
 
-        //     }
-      //  });
 
 
         btEntrarAut.setOnClickListener(new View.OnClickListener() {

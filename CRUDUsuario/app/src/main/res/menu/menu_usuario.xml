@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/item_salvar_usuario"
+        android:title="Salvar"
+        android:icon="@drawable/ic_action_save"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/item_excluir_usuario"
+        android:title="Excluir"
+        android:icon="@drawable/ic_action_excluir"
+        app:showAsAction="always"/>
+    <item android:id="@+id/item_pesquisar_usuario"
+        android:title="Pesquisar"
+        android:icon="@drawable/ic_action_pesquisar"
+        app:showAsAction="always"/>
+
+
+
+</menu>

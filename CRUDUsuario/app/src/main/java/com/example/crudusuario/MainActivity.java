@@ -1,11 +1,13 @@
 package com.example.crudusuario;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,9 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtNome;
     private EditText txtLogin;
     private EditText txtSenha;
-    private Button btSalvar;
-    private Button btPesq;
-    private Button btExcluir;
     private Button btSincronizar;
 
     UsuarioDAO usuarioDAO;
@@ -44,12 +43,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtNome = findViewById(R.id.txtNome);
-        txtLogin = findViewById(R.id.txtLogin);
-        txtSenha = findViewById(R.id.txtSenha);
-        btSalvar = findViewById(R.id.btSalvar);
-        btPesq = findViewById(R.id.btPesq);
-        btExcluir = findViewById(R.id.btExcluir);
+        txtNome = findViewById(R.id.txtNomeReg);
+        txtLogin = findViewById(R.id.txtLoginReg);
+        txtSenha = findViewById(R.id.txtSenhaReg);
         btSincronizar = findViewById(R.id.btSinc);
 
         ActionBar actionBar = getSupportActionBar();
@@ -78,37 +74,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        btSalvar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                verificarUsuarioDuplicado(txtLogin.getText().toString());
-            }
-        });
 
 
-        btPesq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ListarUsuarios.class));
-            }
-        });
 
-        btExcluir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (usuarioCarregado.getId() != 0) {
-                    usuarioDAO.deletar(usuarioCarregado);
-                    limparCampos();
-                }
-            }
-        });
+
+
 
 
         carregarUsuario();
     }
 
 
-    public void salvarUsuario(){
+        public void salvarUsuario(){
         usuario = new Usuario();
         if (usuarioCarregado == null) {
             usuarioCarregado = new Usuario();
@@ -139,9 +116,7 @@ public class MainActivity extends AppCompatActivity {
             txtLogin.setText(usuarioCarregado.getLogin());
             txtSenha.setText(usuarioCarregado.getSenha());
 
-            btExcluir.setEnabled(true);
-        } else {
-            btExcluir.setEnabled(false);
+
         }
 
     }
@@ -153,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
         usuario = new Usuario();
         usuarioCarregado = new Usuario();
-        btExcluir.setEnabled(false);
+
     }
 
 
@@ -245,6 +220,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_usuario, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.item_salvar_usuario:
+                verificarUsuarioDuplicado(txtLogin.getText().toString());
+                break;
+            case R.id.item_excluir_usuario:
+                if (usuarioCarregado.getId() != 0) {
+                    usuarioDAO.deletar(usuarioCarregado);
+                    limparCampos();
+                }
+                break;
+            case R.id.item_pesquisar_usuario:
+                startActivity(new Intent(MainActivity.this, ListarUsuarios.class));
+                break;
+        }
+        return true;
     }
 
 

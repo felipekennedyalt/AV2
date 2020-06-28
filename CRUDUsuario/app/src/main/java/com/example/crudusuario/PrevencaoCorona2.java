@@ -34,6 +34,7 @@ public class PrevencaoCorona2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PrevencaoCorona2.this, PrevencaoCorona.class);
+                startActivity(intent);
             }
         });
 
@@ -41,6 +42,7 @@ public class PrevencaoCorona2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PrevencaoCorona2.this, MenuPrincipal.class);
+                startActivity(intent);
             }
         });
 
