@@ -56,7 +56,7 @@ public class TelaAutenticacao extends AppCompatActivity {
         tvRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TelaAutenticacao.this, TelaRegistrar.class));
+                startActivity(new Intent(TelaAutenticacao.this, MainActivity.class));
             }
         });
 

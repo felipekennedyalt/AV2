@@ -36,7 +36,7 @@ public class Sobre extends AppCompatActivity {
         btnAlan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogUtil.mostrarDialog(Sobre.this, "Desenvolvedor", "O cara mais bonito da equipe", R.drawable.alan);
+                DialogUtil.mostrarDialog(Sobre.this, "Desenvolvedor", "O cara mais bonito da equipe", R.drawable.tosse);
             }
         });
 
