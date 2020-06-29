@@ -1,5 +1,6 @@
 package com.example.crudusuario;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -45,6 +46,13 @@ public class ListaEstados extends AppCompatActivity {
             }
         });
         thread.start();
+
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.setTitle("Casos por Estados");
+        }
+
+
 
     }
 
