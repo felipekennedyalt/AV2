@@ -14,7 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Sobre" />
-        <activity android:name=".Denunciar" />
         <activity android:name=".PrevencaoCorona2" />
         <activity android:name=".PrevencaoCorona" />
         <activity android:name=".ListaEstados" />

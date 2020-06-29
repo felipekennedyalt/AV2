@@ -22,6 +22,7 @@ public class ListarUsuarios extends AppCompatActivity {
     Button btPesquisar;
     ListView listViewUsuarios;
     EditText txtPesquisar;
+    Button btnVoltarDeListUsuarios;
 
     UsuarioDAO usuarioDAO;
     ArrayList<Usuario> listaUsuarios;
@@ -36,11 +37,20 @@ public class ListarUsuarios extends AppCompatActivity {
         btPesquisar = findViewById(R.id.btPesquisar);
         listViewUsuarios = findViewById(R.id.listUsuarios);
         txtPesquisar = findViewById(R.id.txtPesquisar);
+        btnVoltarDeListUsuarios = findViewById(R.id.btnVoltarDeListUsuarios);
 
         ActionBar actionBar = getSupportActionBar();
         if(actionBar != null){
             actionBar.setTitle("Listar Usuários");
         }
+
+        btnVoltarDeListUsuarios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ListarUsuarios.this, MenuPrincipal.class));
+                finish();
+            }
+        });
 
         usuarioDAO = new UsuarioDAO(openOrCreateDatabase(usuarioDAO.NOME_BANCO, MODE_PRIVATE, null));
 

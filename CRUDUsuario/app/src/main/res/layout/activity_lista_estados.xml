@@ -8,11 +8,23 @@
 
     <ListView
         android:id="@+id/listaEstados"
-        android:layout_width="331dp"
-        android:layout_height="594dp"
+        android:layout_width="343dp"
+        android:layout_height="527dp"
+        android:layout_marginTop="30dp"
         android:cacheColorHint="#070FCB"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnVoltarDeListEstados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/botao_util"
+        android:text="Voltar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listaEstados" />
 </androidx.constraintlayout.widget.ConstraintLayout>

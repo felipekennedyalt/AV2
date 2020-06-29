@@ -48,6 +48,7 @@ public class MenuPrincipal extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(MenuPrincipal.this, ListaEstados.class));
                 finish();
+
             }
         });
 
@@ -56,7 +57,7 @@ public class MenuPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MenuPrincipal.this, MainActivity.class));
-                finish();
+
             }
         });
 
@@ -65,6 +66,8 @@ public class MenuPrincipal extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuPrincipal.this, PrevencaoCorona.class);
                 startActivity(intent);
+                finish();
+
             }
         });
 
@@ -79,6 +82,7 @@ public class MenuPrincipal extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.item_sobre:
                 startActivity(new Intent(this, Sobre.class));
+                finish();
                 break;
             case R.id.btn_Denunciar:
                 call();

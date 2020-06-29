@@ -65,6 +65,6 @@ public class CasosPorEstado implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        return this.state+" Confirmados: "+cases;
+        return this.state;
     }
 }

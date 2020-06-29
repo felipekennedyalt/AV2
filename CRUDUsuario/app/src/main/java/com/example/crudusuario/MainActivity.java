@@ -73,14 +73,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
-
-
-
         carregarUsuario();
     }
 
@@ -138,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         String url = "";
         for (final Usuario usuario : listaUsuarios) {
 
-            url = "http://192.168.1.3/webservice/usuario/salvar.php?"+"id="+usuario.getId()
+            url = "http://192.168.1.2/webservice/usuario/salvar.php?"+"id="+usuario.getId()
                     +"&nome="+usuario.getNome()
                     +"&login="+usuario.getLogin()
                     +"&senha="+usuario.getSenha();
@@ -188,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
     public void verificarUsuarioDuplicado(String login){
         OkHttpClient client = new OkHttpClient();
         Request request;
-        String url = "http://192.168.1.3/webservice/usuario/verificar_duplicado.php?"+
+        String url = "http://192.168.1.2/webservice/usuario/verificar_duplicado.php?"+
                 "login="+login;
 
         request = new Request.Builder()
@@ -239,6 +231,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.item_pesquisar_usuario:
                 startActivity(new Intent(MainActivity.this, ListarUsuarios.class));
+                finish();
                 break;
         }
         return true;
