@@ -47,7 +47,7 @@ public class ListarUsuarios extends AppCompatActivity {
         btnVoltarDeListUsuarios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ListarUsuarios.this, MenuPrincipal.class));
+                startActivity(new Intent(ListarUsuarios.this, MainActivity.class));
                 finish();
             }
         });

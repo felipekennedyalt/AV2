@@ -98,9 +98,9 @@ public class ListaEstados extends AppCompatActivity {
         dialog = new AlertDialog.Builder(ListaEstados.this);
         String mensagem = "";
         mensagem += "Confirmados: "+casoEstado.getCases();
-        mensagem += "Óbitos: "+casoEstado.getDeaths();
-        mensagem += "Suspeitos: "+casoEstado.getSuspects();
-        mensagem += "Descartados: "+casoEstado.getRefuses();
+        mensagem += "\nÓbitos: "+casoEstado.getDeaths();
+        mensagem += "\nSuspeitos: "+casoEstado.getSuspects();
+        mensagem += "\nDescartados: "+casoEstado.getRefuses();
 
 
 

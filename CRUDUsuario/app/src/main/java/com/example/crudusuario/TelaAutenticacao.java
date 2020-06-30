@@ -67,7 +67,6 @@ public class TelaAutenticacao extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 autenticarUsuario(txtUsuarioAut.getText().toString(), txtSenhaAut.getText().toString());
-                finish();
             }
         });
 
@@ -76,7 +75,7 @@ public class TelaAutenticacao extends AppCompatActivity {
     public void autenticarUsuario(String login, String senha){
         OkHttpClient client = new OkHttpClient();
         Request request;
-        String url = "http://192.168.1.2/webservice/usuario/autenticar.php?"+
+        String url = "http://192.168.1.6/webservice/usuario/autenticar.php?"+
                 "login="+login+
                 "&senha="+senha;
         request = new Request.Builder()
